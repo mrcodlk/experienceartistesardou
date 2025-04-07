@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Michel Sardou – 60 ans de carrière</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 2em;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+    .checkbox-container {
+      margin-top: 2em;
+      font-size: 1.2em;
+    }
+    a {
+      color: #80c0ff;
+      text-decoration: none;
+    }
+    .info {
+      margin-top: 1em;
+      font-style: italic;
+      font-size: 0.95em;
+    }
+    #weezevent-widget {
+      display: none;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="sardou 60.png" alt="Affiche Michel Sardou – 60 ans de carrière">
+
+  <div class="checkbox-container">
+    <label>
+      <input type="checkbox" id="cgu-checkbox">
+      J’accepte les CGU disponibles <a href="CGU.html" target="_blank">ici</a>
+    </label>
+  </div>
+
+  <div class="info">Vous devez accepter les CGU pour accéder à la billetterie.</div>
+
+  <div id="weezevent-widget">
+    <a title="Logiciel billetterie en ligne"
+       href="https://widget.weezevent.com/ticket/E1311976/?code=79967&locale=fr-FR&width_auto=1&color_primary=0032FA"
+       class="weezevent-widget-integration"
+       data-src="https://widget.weezevent.com/ticket/E1311976/?code=79967&locale=fr-FR&width_auto=1&color_primary=0032FA"
+       data-id="1311976"
+       data-resize="1"
+       data-width_auto="1"
+       data-noscroll="0"
+       data-use-container="yes"
+       data-type="neo"
+       target="_blank">Billetterie Weezevent</a>
+  </div>
+
+  <script type="text/javascript" src="https://widget.weezevent.com/weez.js"></script>
+
+  <script>
+    const checkbox = document.getElementById('cgu-checkbox');
+    const widget = document.getElementById('weezevent-widget');
+
+    checkbox.addEventListener('change', function () {
+      widget.style.display = checkbox.checked ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>
