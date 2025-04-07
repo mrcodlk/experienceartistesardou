@@ -75,8 +75,10 @@
     checkbox.addEventListener('change', function () {
       if (checkbox.checked) {
         button.classList.add('enabled');
+        localStorage.setItem("cguAccepted", "yes");
       } else {
         button.classList.remove('enabled');
+        localStorage.removeItem("cguAccepted");
       }
     });
   </script>
