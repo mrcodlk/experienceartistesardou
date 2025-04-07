@@ -39,11 +39,17 @@
       cursor: not-allowed;
       opacity: 0.5;
       pointer-events: none;
+      transition: 0.3s;
     }
     .button.enabled {
       cursor: pointer;
       opacity: 1;
       pointer-events: auto;
+    }
+    .info {
+      margin-top: 1em;
+      font-style: italic;
+      font-size: 0.95em;
     }
   </style>
 </head>
@@ -57,6 +63,8 @@
       J’accepte les CGU disponibles <a href="CGU.html" target="_blank">ici</a>
     </label>
   </div>
+
+  <div class="info">Vous devez accepter les CGU pour accéder à la billetterie.</div>
 
   <a id="ticket-link" href="https://my.weezevent.com/michel-sardou-60-ans-de-carriere" class="button">Accéder à la billetterie</a>
 
