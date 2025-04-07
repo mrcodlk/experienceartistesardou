@@ -32,9 +32,24 @@
       font-style: italic;
       font-size: 0.95em;
     }
-    #weezevent-widget {
-      display: none;
-      margin-top: 2em;
+    .button {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 0.8em 1.5em;
+      background-color: #1d72b8;
+      color: white;
+      font-size: 1.2em;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+    .button.enabled {
+      cursor: pointer;
+      opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -51,28 +66,18 @@
 
   <div class="info">Vous devez accepter les CGU pour accéder à la billetterie.</div>
 
-  <div id="weezevent-widget">
-    <a title="Logiciel billetterie en ligne"
-       href="https://widget.weezevent.com/ticket/E1311976/?code=79967&locale=fr-FR&width_auto=1&color_primary=0032FA"
-       class="weezevent-widget-integration"
-       data-src="https://widget.weezevent.com/ticket/E1311976/?code=79967&locale=fr-FR&width_auto=1&color_primary=0032FA"
-       data-id="1311976"
-       data-resize="1"
-       data-width_auto="1"
-       data-noscroll="0"
-       data-use-container="yes"
-       data-type="neo"
-       target="_blank">Billetterie Weezevent</a>
-  </div>
-
-  <script type="text/javascript" src="https://widget.weezevent.com/weez.js"></script>
+  <a id="ticket-button" href="billetterie.html" class="button">Accéder à la billetterie</a>
 
   <script>
     const checkbox = document.getElementById('cgu-checkbox');
-    const widget = document.getElementById('weezevent-widget');
+    const button = document.getElementById('ticket-button');
 
     checkbox.addEventListener('change', function () {
-      widget.style.display = checkbox.checked ? 'block' : 'none';
+      if (checkbox.checked) {
+        button.classList.add('enabled');
+      } else {
+        button.classList.remove('enabled');
+      }
     });
   </script>
 
